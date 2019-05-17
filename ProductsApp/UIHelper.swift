@@ -9,13 +9,12 @@
 import UIKit
 
 extension UIImageView {
-    func setImage(url: URL) {
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url) {
-                DispatchQueue.main.async {
-                    self.image = UIImage(data: data)
-                }
-            }
+    func setImage(imageUrl: String?) {
+        
+        if let imageUrl = imageUrl, imageUrl != "" {
+            self.kf.setImage(with: URL(string: imageUrl), placeholder: #imageLiteral(resourceName: "empty-box"))
+            return
         }
+        self.image = #imageLiteral(resourceName: "empty-box")
     }
 }
