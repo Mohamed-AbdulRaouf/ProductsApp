@@ -22,12 +22,12 @@ class ProductsInteractor {
 
         NetworkManager.callAPI(endPoint: url, completionHandler: { (jsonData) in
             guard let result = try? JSONDecoder().decode(Products.self, from: jsonData) else {
-                print("Fail in parthing model")
+                self.presenter.showAlert("some thing went wrong")
                 return
             }
             self.presenter.showProducts(result)
         }) { (error) in
-            print(error.localizedDescription)
+            self.presenter.showAlert(error.localizedDescription)
         }
     }
 }

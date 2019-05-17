@@ -9,9 +9,11 @@
 import UIKit
 
 class ProductsView: UIViewController {
+
+    @IBOutlet weak var tableView: UITableView!
     
     var interactor: ProductsInteractor!
-    var arrayOfProducts: Products!
+    var arrayOfProducts: Products?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +25,12 @@ class ProductsView: UIViewController {
 extension ProductsView: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfProducts.count
+        return arrayOfProducts?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell" , for: indexPath) as? ProductCell {
-            cell.configure(product: arrayOfProducts.productsArray[indexPath.row])
+            cell.configure(product: arrayOfProducts?.productsArray[indexPath.row])
             return cell
         }
         return UITableViewCell()

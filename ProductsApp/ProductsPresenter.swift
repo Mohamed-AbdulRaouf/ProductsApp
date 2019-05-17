@@ -18,5 +18,10 @@ class ProductsPresenter {
     
     func showProducts(_ products: Products) {
         view.arrayOfProducts = products
+        view.tableView.reloadData()
+    }
+    
+    func showAlert(_ error: String) {
+        view.alert(title: "", message: error, actions: [("Ok", .default)])
     }
 }
