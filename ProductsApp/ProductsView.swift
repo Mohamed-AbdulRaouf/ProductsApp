@@ -11,11 +11,11 @@ import UIKit
 class ProductsView: UIViewController {
 
     let productItemOne = ProductItem(name: "Gottlieb and Sons", price: 489,
-                                     picture: "http://dummyimage.com/150x168.png/dddddd/000000")
+                                     picture: "http://dummyimage.com/150x168.png/")
     let productItemTwo = ProductItem(name: "Stanton, Greenfelder and Conroy", price: 991,
-                                     picture: "http://dummyimage.com/150x162.png/cc0000/ffffff")
+                                     picture: "http://dummyimage.com/150x162.png/")
     let productItemThree = ProductItem(name: "Beatty and Sons", price: 88,
-                                       picture: "http://dummyimage.com/150x185.png/5fa2dd/ffffff")
+                                       picture: "http://dummyimage.com/150x185.png/")
     var arrayOfProducts: [ProductItem]!
 
     override func viewDidLoad() {

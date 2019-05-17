@@ -70,17 +70,25 @@
 			isa = PBXGroup;
 			children = (
 				024498FB228EADE5008A9180 /* AppDelegate.swift */,
-				02449911228EBE95008A9180 /* UIHelper.swift */,
 				02449913228EC595008A9180 /* Constants.swift */,
+				02449911228EBE95008A9180 /* UIHelper.swift */,
 				024498FF228EADE5008A9180 /* Main.storyboard */,
 				024498FD228EADE5008A9180 /* ProductsView.swift */,
 				0244990D228EBA42008A9180 /* ProductCell.swift */,
 				0244990F228EBB3F008A9180 /* ProductItem.swift */,
-				02449902228EADE7008A9180 /* Assets.xcassets */,
-				02449904228EADE7008A9180 /* LaunchScreen.storyboard */,
+				02449915228ED633008A9180 /* Supporting Files */,
 				02449907228EADE7008A9180 /* Info.plist */,
 			);
 			path = ProductsApp;
+			sourceTree = "<group>";
+		};
+		02449915228ED633008A9180 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				02449902228EADE7008A9180 /* Assets.xcassets */,
+				02449904228EADE7008A9180 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		30C76D57F2F460B21F7A7009 /* Pods */ = {

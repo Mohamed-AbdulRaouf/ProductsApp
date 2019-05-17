@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 extension UIImageView {
     func setImage(imageUrl: String?) {
@@ -14,7 +15,8 @@ extension UIImageView {
         if let imageUrl = imageUrl, imageUrl != "" {
             self.kf.setImage(with: URL(string: imageUrl), placeholder: #imageLiteral(resourceName: "empty-box"))
             return
+        } else {
+            self.image = #imageLiteral(resourceName: "empty-box")
         }
-        self.image = #imageLiteral(resourceName: "empty-box")
     }
 }
