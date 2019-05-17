@@ -31,7 +31,7 @@ extension ProductsView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier.stringVaule! , for: indexPath) as? ProductCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell" , for: indexPath) as? ProductCell {
             cell.configure(product: arrayOfProducts[indexPath.row])
             return cell
         }
@@ -39,6 +39,6 @@ extension ProductsView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Constants.cellHight.floatValue!
+        return 240
     }
 }
