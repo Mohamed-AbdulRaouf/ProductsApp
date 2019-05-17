@@ -14,9 +14,9 @@ class ProductCell: UITableViewCell {
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var picture: UIImageView!
     
-    func configure(product: ProductCellItem) {
+    func configure(product: Product) {
         name.text = product.name
         price.text = "\(product.price)"
-        picture.setImage(imageUrl: product.picture)
+        picture.setImage(imageUrl: product.image.link)
     }
 }

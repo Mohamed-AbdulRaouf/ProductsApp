@@ -11,28 +11,23 @@ import Alamofire
 
 class ProductsInteractor {
     
-    static func getProducts() {
-        
+    let presenter: ProductsPresenter!
+    
+    init(presenter: ProductsPresenter) {
+        self.presenter = presenter
+    }
+
+    func getProducts() {
         let url = "https://limitless-forest-98976.herokuapp.com"
-        callAPI(endPoint: url, completionHandler: { (jsonData) in
-            
+
+        NetworkManager.callAPI(endPoint: url, completionHandler: { (jsonData) in
+            guard let result = try? JSONDecoder().decode(Products.self, from: jsonData) else {
+                print("Fail in parthing model")
+                return
+            }
+            self.presenter.showProducts(result)
         }) { (error) in
             print(error.localizedDescription)
         }
-        
     }
-    
-    static func callAPI(endPoint: String, completionHandler: @escaping (Data) -> Void,
-                 failHandler: @escaping (Error) -> Void) {
-        Alamofire.request(endPoint).validate().responseJSON { (response) in
-            switch response.result {
-            case .success:
-                if let data = response.data {
-                    completionHandler(data)
-                }
-            case let .failure(error): failHandler(error)
-            }
-        }
-    }
-    
 }

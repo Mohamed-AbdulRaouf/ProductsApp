@@ -9,16 +9,16 @@
 import Foundation
 
 class Products: Codable {
-    let products: [Product]
+    let productsArray: [Product]
     let count: Int
     
     init(Products: [Product], count: Int) {
-        self.products = Products
+        self.productsArray = Products
         self.count = count
     }
     
     enum CodingKeys: String, CodingKey {
-        case products = "data"
+        case productsArray = "data"
         case count
     }
 }
