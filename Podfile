@@ -4,4 +4,5 @@ target 'ProductsApp' do
     use_frameworks!
 
     pod 'Kingfisher'
+    pod 'Alamofire'
 end

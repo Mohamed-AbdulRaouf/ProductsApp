@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ProductItem {
+struct ProductCellItem {
     let name: String
     let price: Int
     let picture: String

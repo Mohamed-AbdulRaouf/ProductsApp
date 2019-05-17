@@ -10,17 +10,18 @@ import UIKit
 
 class ProductsView: UIViewController {
 
-    let productItemOne = ProductItem(name: "Gottlieb and Sons", price: 489,
+    let productItemOne = ProductCellItem(name: "Gottlieb and Sons", price: 489,
                                      picture: "http://dummyimage.com/150x168.png/")
-    let productItemTwo = ProductItem(name: "Stanton, Greenfelder and Conroy", price: 991,
+    let productItemTwo = ProductCellItem(name: "Stanton, Greenfelder and Conroy", price: 991,
                                      picture: "http://dummyimage.com/150x162.png/")
-    let productItemThree = ProductItem(name: "Beatty and Sons", price: 88,
+    let productItemThree = ProductCellItem(name: "Beatty and Sons", price: 88,
                                        picture: "http://dummyimage.com/150x185.png/")
-    var arrayOfProducts: [ProductItem]!
+    var arrayOfProducts: [ProductCellItem]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         arrayOfProducts = [productItemOne, productItemTwo, productItemThree, productItemOne, productItemTwo, productItemThree]
+        ProductsInteractor.getProducts()
     }
 }
 
