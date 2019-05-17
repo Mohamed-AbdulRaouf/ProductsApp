@@ -16,6 +16,7 @@
 		02449910228EBB3F008A9180 /* ProductCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0244990F228EBB3F008A9180 /* ProductCellItem.swift */; };
 		02449912228EBE95008A9180 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02449911228EBE95008A9180 /* UIHelper.swift */; };
 		02449917228EF32D008A9180 /* ProductsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02449916228EF32D008A9180 /* ProductsInteractor.swift */; };
+		0244991B228F0284008A9180 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0244991A228F0284008A9180 /* Products.swift */; };
 		0B501CD6101123BF8139DC95 /* Pods_ProductsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F6F4708A9E8BC93BA91B0D /* Pods_ProductsApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		0244990F228EBB3F008A9180 /* ProductCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCellItem.swift; sourceTree = "<group>"; };
 		02449911228EBE95008A9180 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		02449916228EF32D008A9180 /* ProductsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsInteractor.swift; sourceTree = "<group>"; };
+		0244991A228F0284008A9180 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		C530855C9D30FD5E465B902C /* Pods-ProductsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductsApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ProductsApp/Pods-ProductsApp.release.xcconfig"; sourceTree = "<group>"; };
 		E4FD9768BB40AB97AF2AB38C /* Pods-ProductsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductsApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ProductsApp/Pods-ProductsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		F9F6F4708A9E8BC93BA91B0D /* Pods_ProductsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,7 @@
 				02449911228EBE95008A9180 /* UIHelper.swift */,
 				024498FF228EADE5008A9180 /* Main.storyboard */,
 				024498FD228EADE5008A9180 /* ProductsView.swift */,
+				0244991A228F0284008A9180 /* Products.swift */,
 				02449916228EF32D008A9180 /* ProductsInteractor.swift */,
 				0244990D228EBA42008A9180 /* ProductCell.swift */,
 				0244990F228EBB3F008A9180 /* ProductCellItem.swift */,
@@ -225,6 +228,7 @@
 				02449917228EF32D008A9180 /* ProductsInteractor.swift in Sources */,
 				02449910228EBB3F008A9180 /* ProductCellItem.swift in Sources */,
 				0244990E228EBA42008A9180 /* ProductCell.swift in Sources */,
+				0244991B228F0284008A9180 /* Products.swift in Sources */,
 				024498FE228EADE5008A9180 /* ProductsView.swift in Sources */,
 				02449912228EBE95008A9180 /* UIHelper.swift in Sources */,
 				024498FC228EADE5008A9180 /* AppDelegate.swift in Sources */,
