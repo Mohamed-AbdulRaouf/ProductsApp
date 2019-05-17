@@ -18,9 +18,8 @@ class ProductsInteractor {
     }
 
     func getProducts() {
-        let url = "https://limitless-forest-98976.herokuapp.com"
 
-        NetworkManager.callAPI(endPoint: url, completionHandler: { (jsonData) in
+        NetworkManager.callAPI(endPoint: GetProducts(), completionHandler: { (jsonData) in
             guard let result = try? JSONDecoder().decode(Products.self, from: jsonData) else {
                 self.presenter.showAlert("some thing went wrong")
                 return
