@@ -8,31 +8,44 @@
 
 import UIKit
 
-class ProductsView: UIViewController {
+protocol ProductsViewDelegate {
+    func reloadTableView(_ products: [Product])
+    func showAlert(_ error: String)
+}
 
-    let productItemOne = ProductItem(name: "Gottlieb and Sons", price: 489,
-                                     picture: "http://dummyimage.com/150x168.png/")
-    let productItemTwo = ProductItem(name: "Stanton, Greenfelder and Conroy", price: 991,
-                                     picture: "http://dummyimage.com/150x162.png/")
-    let productItemThree = ProductItem(name: "Beatty and Sons", price: 88,
-                                       picture: "http://dummyimage.com/150x185.png/")
-    var arrayOfProducts: [ProductItem]!
+class ProductsView: UIViewController, ProductsViewDelegate {
+
+    @IBOutlet weak var tableView: UITableView!
+    
+    var interactor: ProductsInteractor!
+    var productsArray: [Product] = []
+    var productsViewDelegate: ProductsViewDelegate = ProductsView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        arrayOfProducts = [productItemOne, productItemTwo, productItemThree, productItemOne, productItemTwo, productItemThree]
+        interactor = ProductsInteractor(presenter: ProductsPresenter(view: productsViewDelegate))
+        interactor.getProducts()
+    }
+
+    func reloadTableView(_ products: [Product]) {
+        productsArray = products
+        tableView.reloadData()
+    }
+    
+    func showAlert(_ error: String) {
+        alert(title: "", message: error, actions: [("Ok", .default)])
     }
 }
 
 extension ProductsView: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayOfProducts.count
+        return productsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell" , for: indexPath) as? ProductCell {
-            cell.configure(product: arrayOfProducts[indexPath.row])
+            cell.configure(product: productsArray[indexPath.row])
             return cell
         }
         return UITableViewCell()
