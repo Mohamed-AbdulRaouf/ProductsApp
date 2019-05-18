@@ -10,18 +10,17 @@ import Foundation
 
 class ProductsPresenter {
     
-    let view: ProductsView!
+    let view: ProductsViewDelegate!
     
-    init(view: ProductsView) {
+    init(view: ProductsViewDelegate) {
         self.view = view
     }
     
-    func showProducts(_ products: Products) {
-        view.arrayOfProducts = products
-        view.tableView.reloadData()
+    func showProducts(_ products: [Product]) {
+        view.reloadTableView(products)
     }
     
     func showAlert(_ error: String) {
-        view.alert(title: "", message: error, actions: [("Ok", .default)])
+        view.showAlert(error)
     }
 }

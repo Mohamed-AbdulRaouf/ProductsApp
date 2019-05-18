@@ -12,21 +12,23 @@ import Alamofire
 class ProductsInteractor {
     
     let presenter: ProductsPresenter!
+    var networkManager: NetworkManager
     
-    init(presenter: ProductsPresenter) {
+    init(presenter: ProductsPresenter, _ networkManager: NetworkManager = NetworkManagerImpl()) {
         self.presenter = presenter
+        self.networkManager = networkManager
     }
 
     func getProducts() {
 
-        NetworkManager.callAPI(endPoint: GetProducts(), completionHandler: { (jsonData) in
+        networkManager.callAPI(endPoint: GetProducts(), completionHandler: { (jsonData) in
             guard let result = try? JSONDecoder().decode(Products.self, from: jsonData) else {
                 self.presenter.showAlert("some thing went wrong")
                 return
             }
-            self.presenter.showProducts(result)
+            self.presenter.showProducts(result.productsArray)
         }) { (error) in
-            self.presenter.showAlert(error.localizedDescription)
+            self.presenter.showAlert(error.message)
         }
     }
 }
