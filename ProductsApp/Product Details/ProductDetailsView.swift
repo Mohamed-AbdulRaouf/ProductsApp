@@ -15,18 +15,15 @@ protocol ProductDetailsDelegate {
 class ProductDetailsView: UIViewController, ProductDetailsDelegate {
 
     @IBOutlet weak var productDetails: UILabel!
-    @IBAction func backIsPressed(_ sender: UIButton) {
-        
-    }
-    
+
     func selected(_ product: Product) {
-        let sentence = product.productDescription
-        var lines: [String] = []
-        sentence.enumerateLines { (line, _) in
-            lines.append(line)
+        productDetails.text = ""
+        product.productDescription.enumerateLines { (line, _) in
+            self.productDetails.text?.append("\(line)\n")
         }
-        
-        productDetails.text = product.productDescription
-        print(product.productDescription)
+    }
+
+    @IBAction func backIsPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

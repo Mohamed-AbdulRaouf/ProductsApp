@@ -28,7 +28,7 @@
                                 <rect key="frame" x="0.0" y="81.333333333333314" width="375" height="730.66666666666674"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="242" id="44W-ZW-eAE" customClass="ProductCell" customModule="ProductsApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ProductCell" rowHeight="242" id="44W-ZW-eAE" customClass="ProductCell" customModule="ProductsApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="242"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="44W-ZW-eAE" id="r7p-xH-xaP">
@@ -106,7 +106,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="Lw2-Og-YYK" id="tzE-UN-2GS"/>
-                        <segue destination="oNx-P1-HZX" kind="show" identifier="ToProductDetails" id="RBD-7g-gOn"/>
+                        <segue destination="oNx-P1-HZX" kind="presentation" identifier="ToProductDetails" id="RBD-7g-gOn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -121,16 +121,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item details is here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="I3M-cb-4d5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item details is here" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="I3M-cb-4d5">
                                 <rect key="frame" x="37.666666666666657" y="208" width="300" height="406"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXV-Cf-G5Z">
-                                <rect key="frame" x="170" y="114" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="back"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXV-Cf-G5Z">
+                                <rect key="frame" x="20" y="59" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OXV-Cf-G5Z" secondAttribute="height" id="1Hx-4C-bTE"/>
+                                </constraints>
+                                <state key="normal" image="back_button "/>
                                 <connections>
                                     <action selector="backIsPressed:" destination="oNx-P1-HZX" eventType="touchUpInside" id="n5p-si-bhU"/>
                                 </connections>
@@ -138,15 +140,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="OXV-Cf-G5Z" firstAttribute="top" secondItem="Es4-7B-7iC" secondAttribute="top" constant="15" id="3XC-7y-iHA"/>
+                            <constraint firstItem="OXV-Cf-G5Z" firstAttribute="leading" secondItem="Es4-7B-7iC" secondAttribute="leading" constant="20" id="3fY-HY-uyn"/>
                             <constraint firstItem="I3M-cb-4d5" firstAttribute="width" secondItem="sMA-Ca-NI4" secondAttribute="width" multiplier="0.8" id="48j-qA-Gvl"/>
                             <constraint firstItem="I3M-cb-4d5" firstAttribute="height" secondItem="sMA-Ca-NI4" secondAttribute="height" multiplier="0.5" id="7bx-3B-k8g"/>
+                            <constraint firstItem="OXV-Cf-G5Z" firstAttribute="width" secondItem="sMA-Ca-NI4" secondAttribute="width" multiplier="0.12" id="exF-Ez-hsJ"/>
                             <constraint firstItem="I3M-cb-4d5" firstAttribute="centerY" secondItem="Es4-7B-7iC" secondAttribute="centerY" id="l6w-7s-Wgy"/>
                             <constraint firstItem="I3M-cb-4d5" firstAttribute="centerX" secondItem="Es4-7B-7iC" secondAttribute="centerX" id="v7n-yA-crC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Es4-7B-7iC"/>
                     </view>
                     <connections>
-                        <outlet property="productDetails" destination="I3M-cb-4d5" id="hh5-Wt-keR"/>
+                        <outlet property="productDetails" destination="I3M-cb-4d5" id="Y3u-1p-GE6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i11-v5-KrG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -154,4 +159,7 @@
             <point key="canvasLocation" x="871" y="132"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back_button " width="512" height="512"/>
+    </resources>
 </document>
