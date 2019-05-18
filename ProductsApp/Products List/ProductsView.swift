@@ -22,7 +22,7 @@ class ProductsView: UIViewController, ProductsViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor = ProductsInteractor(presenter: ProductsPresenter(view: productsViewDelegate))
+        interactor = ProductsInteractor(presenter: ProductsPresenter(view: self))
         interactor.getProducts()
     }
 
