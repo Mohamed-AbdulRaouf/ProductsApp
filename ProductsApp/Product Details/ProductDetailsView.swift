@@ -14,9 +14,15 @@ protocol ProductDetailsDelegate {
 
 class ProductDetailsView: UIViewController, ProductDetailsDelegate {
 
+    @IBOutlet weak var pichture: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var price: UILabel!
     @IBOutlet weak var productDetails: UILabel!
 
     func selected(_ product: Product) {
+        pichture.setImage(imageUrl: product.image.link)
+        name.text = product.name
+        price.text = "\(product.price)"
         productDetails.text = ""
         product.productDescription.enumerateLines { (line, _) in
             self.productDetails.text?.append("\(line)\n")
