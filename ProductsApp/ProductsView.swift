@@ -19,11 +19,10 @@ class ProductsView: UIViewController, ProductsViewDelegate {
     
     var interactor: ProductsInteractor!
     var productsArray: [Product] = []
-    var productsViewDelegate: ProductsViewDelegate = ProductsView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        interactor = ProductsInteractor(presenter: ProductsPresenter(view: productsViewDelegate))
+        interactor = ProductsInteractor(presenter: ProductsPresenter(view: self))
         interactor.getProducts()
     }
 
