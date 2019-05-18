@@ -19,8 +19,6 @@ class ProductsView: UIViewController, ProductsViewDelegate {
     
     var interactor: ProductsInteractor!
     var productsArray: [Product] = []
-    var productsViewDelegate: ProductsViewDelegate = ProductsView()
-    var productDetailsDelegate: ProductDetailsDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
