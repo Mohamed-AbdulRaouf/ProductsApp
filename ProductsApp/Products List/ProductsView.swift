@@ -20,6 +20,7 @@ class ProductsView: UIViewController, ProductsViewDelegate {
     var interactor: ProductsInteractor!
     var productsArray: [Product] = []
     var productsViewDelegate: ProductsViewDelegate = ProductsView()
+    var productDetailsDelegate: ProductDetailsDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,19 @@ class ProductsView: UIViewController, ProductsViewDelegate {
     func showAlert(_ error: String) {
         alert(title: "", message: error, actions: [("Ok", .default)])
     }
+    
+    func showProductDetails(_ product: Product) {
+        productDetailsDelegate?.selected(product)
+        segue("ToProductDetails")
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToProductDetails" {
+            if segue.destination is ProductDetailsView {
+                productDetailsDelegate = self as? ProductDetailsDelegate
+            }
+        }
+    }
 }
 
 extension ProductsView: UITableViewDataSource, UITableViewDelegate {
@@ -49,6 +63,10 @@ extension ProductsView: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        showProductDetails(productsArray[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -8,9 +8,17 @@
 
 import UIKit
 
-class ProductDetailsView: UIViewController {
+protocol ProductDetailsDelegate {
+    func selected(_ product: Product)
+}
+
+class ProductDetailsView: UIViewController, ProductDetailsDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    func selected(_ product: Product) {
+        print(product.name)
     }
 }

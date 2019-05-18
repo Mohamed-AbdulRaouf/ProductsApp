@@ -30,4 +30,8 @@ extension UIViewController {
         }
         self.present(alerting, animated: true, completion: nil)
     }
+    
+    func segue(_ id: String) {
+        self.performSegue(withIdentifier: id, sender: self)
+    }
 }
