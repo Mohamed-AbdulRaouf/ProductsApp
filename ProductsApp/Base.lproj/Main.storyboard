@@ -112,5 +112,34 @@
             </objects>
             <point key="canvasLocation" x="140" y="132.26600985221674"/>
         </scene>
+        <!--Product Details View-->
+        <scene sceneID="Oy2-85-qtN">
+            <objects>
+                <viewController id="oNx-P1-HZX" customClass="ProductDetailsView" customModule="ProductsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sMA-Ca-NI4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item details is here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="I3M-cb-4d5">
+                                <rect key="frame" x="37.666666666666657" y="208" width="300" height="406"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="I3M-cb-4d5" firstAttribute="width" secondItem="sMA-Ca-NI4" secondAttribute="width" multiplier="0.8" id="48j-qA-Gvl"/>
+                            <constraint firstItem="I3M-cb-4d5" firstAttribute="height" secondItem="sMA-Ca-NI4" secondAttribute="height" multiplier="0.5" id="7bx-3B-k8g"/>
+                            <constraint firstItem="I3M-cb-4d5" firstAttribute="centerY" secondItem="Es4-7B-7iC" secondAttribute="centerY" id="l6w-7s-Wgy"/>
+                            <constraint firstItem="I3M-cb-4d5" firstAttribute="centerX" secondItem="Es4-7B-7iC" secondAttribute="centerX" id="v7n-yA-crC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Es4-7B-7iC"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i11-v5-KrG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871" y="132"/>
+        </scene>
     </scenes>
 </document>
