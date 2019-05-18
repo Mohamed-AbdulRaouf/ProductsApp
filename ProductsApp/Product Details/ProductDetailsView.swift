@@ -14,11 +14,19 @@ protocol ProductDetailsDelegate {
 
 class ProductDetailsView: UIViewController, ProductDetailsDelegate {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBOutlet weak var productDetails: UILabel!
+    @IBAction func backIsPressed(_ sender: UIButton) {
+        
     }
-
+    
     func selected(_ product: Product) {
-        print(product.name)
+        let sentence = product.productDescription
+        var lines: [String] = []
+        sentence.enumerateLines { (line, _) in
+            lines.append(line)
+        }
+        
+        productDetails.text = product.productDescription
+        print(product.productDescription)
     }
 }

@@ -19,6 +19,7 @@ class ProductsView: UIViewController, ProductsViewDelegate {
     
     var interactor: ProductsInteractor!
     var productsArray: [Product] = []
+    var productDetailsDelegate: ProductDetailsDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,14 +37,14 @@ class ProductsView: UIViewController, ProductsViewDelegate {
     }
     
     func showProductDetails(_ product: Product) {
-        productDetailsDelegate?.selected(product)
         segue("ToProductDetails")
+        productDetailsDelegate?.selected(product)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToProductDetails" {
-            if segue.destination is ProductDetailsView {
-                productDetailsDelegate = self as? ProductDetailsDelegate
+            if let nextVc = segue.destination as? ProductDetailsView {
+                productDetailsDelegate = nextVc
             }
         }
     }
