@@ -54,7 +54,8 @@ class NetworkManagerImpl: NetworkManager {
                 } else {
                     failHandler(APIError())
                 }
-            case.failure(let error): failHandler(self.networkFail(error))
+            case.failure(let error):
+                failHandler(self.networkFail(error, response.response?.statusCode ?? 0))
             }
         }
     }
@@ -74,8 +75,7 @@ class NetworkManagerImpl: NetworkManager {
         return error
     }
 
-    private func networkFail(_ error: Error) -> APIError {
-        /// check for reatchablity
-        return APIError()
+    private func networkFail(_ error: Error, _ statusCode: Int) -> APIError {
+        return statusCode != 404 ? APIError(message: error.localizedDescription) : APIError()
     }
 }

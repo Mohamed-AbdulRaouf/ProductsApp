@@ -23,7 +23,7 @@ class ProductsInteractor {
 
         networkManager.callAPI(endPoint: GetProducts(), completionHandler: { (jsonData) in
             guard let result = try? JSONDecoder().decode(Products.self, from: jsonData) else {
-                self.presenter.showAlert("some thing went wrong")
+                self.presenter.showAlert(APIError().message)
                 return
             }
             StorageController.save(data: result)
