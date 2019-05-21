@@ -11,7 +11,12 @@ import Foundation
 class Products: Codable {
     let productsArray: [Product]
     let count: Int
-    
+
+    init() {
+        self.productsArray = [Product]()
+        self.count = 0
+    }
+
     init(Products: [Product], count: Int) {
         self.productsArray = Products
         self.count = count
