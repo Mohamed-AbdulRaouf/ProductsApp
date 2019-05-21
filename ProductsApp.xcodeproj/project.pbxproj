@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		022E4B72229457C8004E6A90 /* UserDefultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022E4B71229457C8004E6A90 /* UserDefultsHelper.swift */; };
 		024498FC228EADE5008A9180 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024498FB228EADE5008A9180 /* AppDelegate.swift */; };
 		024498FE228EADE5008A9180 /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024498FD228EADE5008A9180 /* ProductsView.swift */; };
 		02449901228EADE5008A9180 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 024498FF228EADE5008A9180 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		022E4B71229457C8004E6A90 /* UserDefultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefultsHelper.swift; sourceTree = "<group>"; };
 		024498F8228EADE5008A9180 /* ProductsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		024498FB228EADE5008A9180 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		024498FD228EADE5008A9180 /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				02449911228EBE95008A9180 /* UIHelper.swift */,
+				022E4B71229457C8004E6A90 /* UserDefultsHelper.swift */,
 				0244991C228F02EE008A9180 /* NetworkManager.swift */,
 			);
 			path = Helpers;
@@ -265,6 +268,7 @@
 			files = (
 				02449917228EF32D008A9180 /* ProductsInteractor.swift in Sources */,
 				02E2FADD229019B80099DC9D /* ProductDetailsView.swift in Sources */,
+				022E4B72229457C8004E6A90 /* UserDefultsHelper.swift in Sources */,
 				0244990E228EBA42008A9180 /* ProductCell.swift in Sources */,
 				0244991B228F0284008A9180 /* Products.swift in Sources */,
 				0244991D228F02EE008A9180 /* NetworkManager.swift in Sources */,
