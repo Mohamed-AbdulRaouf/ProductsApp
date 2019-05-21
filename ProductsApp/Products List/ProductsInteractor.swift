@@ -26,8 +26,10 @@ class ProductsInteractor {
                 self.presenter.showAlert("some thing went wrong")
                 return
             }
+            StorageController.save(data: result)
             self.presenter.showProducts(result.productsArray)
         }) { (error) in
+            self.presenter.showProducts(StorageController.getData().productsArray)
             self.presenter.showAlert(error.message)
         }
     }
