@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ESPullToRefresh
 
 protocol ProductsViewDelegate {
     func reloadTableView(_ products: [Product])
@@ -24,12 +25,15 @@ class ProductsView: UIViewController, ProductsViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor = ProductsInteractor(presenter: ProductsPresenter(view: self))
-        interactor.getProducts()
+        tableView.es.addPullToRefresh { [unowned self] in
+            self.interactor.getProducts()
+        }
     }
 
     func reloadTableView(_ products: [Product]) {
         productsArray = products
         tableView.reloadData()
+        tableView.es.stopPullToRefresh(ignoreDate: true)
     }
     
     func showAlert(_ error: String) {
