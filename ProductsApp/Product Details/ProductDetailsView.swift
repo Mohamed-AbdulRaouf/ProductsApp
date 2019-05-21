@@ -12,14 +12,21 @@ protocol ProductDetailsDelegate {
     func selected(_ product: Product)
 }
 
-class ProductDetailsView: UIViewController, ProductDetailsDelegate {
+class ProductDetailsView: UIViewController {
 
     @IBOutlet weak var pichture: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var price: UILabel!
     @IBOutlet weak var productDetails: UILabel!
+    
+    var product: Product = Product()
 
-    func selected(_ product: Product) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        showProductDetails(product)
+    }
+
+    func showProductDetails(_ product: Product) {
         pichture.setImage(imageUrl: product.image.link)
         name.text = product.name
         price.text = "\(product.price)"

@@ -36,6 +36,14 @@ class Product: Codable {
         self.image = image
         self.price = price
     }
+    
+    init() {
+        self.id = 0
+        self.name = ""
+        self.productDescription = ""
+        self.image = Image()
+        self.price = 0
+    }
 }
 
 class Image: Codable {
@@ -46,5 +54,11 @@ class Image: Codable {
         self.link = link
         self.height = height
         self.width = width
+    }
+    
+    init() {
+        self.link = ""
+        self.height = ""
+        self.width = ""
     }
 }
