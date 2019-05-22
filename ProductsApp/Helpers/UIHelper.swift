@@ -40,6 +40,6 @@ extension String {
     var imageURlAsHttps: String {
         var text = self
         text.insert("s", at: text.index(text.startIndex, offsetBy: 4))
-        return text.components(separatedBy: ".png")[0] + ".png"
+        return text
     }
 }
