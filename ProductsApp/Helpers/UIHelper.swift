@@ -13,7 +13,7 @@ extension UIImageView {
     func setImage(imageUrl: String?) {
         
         if let imageUrl = imageUrl, !imageUrl.isEmpty {
-            self.kf.setImage(with: URL(string: imageUrl.getImageURlAsHttps), placeholder: #imageLiteral(resourceName: "empty-box"))
+            self.kf.setImage(with: URL(string: imageUrl.imageURlAsHttps), placeholder: #imageLiteral(resourceName: "empty-box"))
             return
         } else {
             self.image = #imageLiteral(resourceName: "empty-box")
