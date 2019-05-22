@@ -12,8 +12,8 @@ import Kingfisher
 extension UIImageView {
     func setImage(imageUrl: String?) {
         
-        if let imageUrl = imageUrl, imageUrl != "" {
-            self.kf.setImage(with: URL(string: imageUrl), placeholder: #imageLiteral(resourceName: "empty-box"))
+        if let imageUrl = imageUrl, !imageUrl.isEmpty {
+            self.kf.setImage(with: URL(string: imageUrl.getImageURlAsHttps), placeholder: #imageLiteral(resourceName: "empty-box"))
             return
         } else {
             self.image = #imageLiteral(resourceName: "empty-box")
@@ -33,5 +33,13 @@ extension UIViewController {
     
     func segue(_ id: String) {
         self.performSegue(withIdentifier: id, sender: self)
+    }
+}
+
+extension String {
+    var imageURlAsHttps: String {
+        var text = self
+        text.insert("s", at: text.index(text.startIndex, offsetBy: 4))
+        return text.components(separatedBy: ".png")[0] + ".png"
     }
 }

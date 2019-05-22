@@ -25,6 +25,7 @@ class ProductsView: UIViewController, ProductsViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         interactor = ProductsInteractor(presenter: ProductsPresenter(view: self))
+        self.interactor.getProducts()
         tableView.es.addPullToRefresh { [unowned self] in
             self.interactor.getProducts()
         }
