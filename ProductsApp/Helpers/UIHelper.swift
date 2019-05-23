@@ -42,4 +42,8 @@ extension String {
         text.insert("s", at: text.index(text.startIndex, offsetBy: 4))
         return text
     }
+    
+    func CGFloatFromString() -> CGFloat {
+        return CGFloat(truncating: NumberFormatter().number(from: self) ?? 0)
+    }
 }

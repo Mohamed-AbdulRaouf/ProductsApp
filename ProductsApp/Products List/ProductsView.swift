@@ -62,6 +62,7 @@ extension ProductsView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell" , for: indexPath) as? ProductCell {
             cell.configure(product: productsArray[indexPath.row])
             return cell
@@ -74,6 +75,12 @@ extension ProductsView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 240
+        return calculateCellHeight(indexPath.row)
+    }
+    
+    func calculateCellHeight(_ indexPath: Int) -> CGFloat {
+        let screenWidth: CGFloat = 400
+        return (screenWidth / productsArray[indexPath].image.width.CGFloatFromString())
+            * (productsArray[indexPath].image.height.CGFloatFromString())
     }
 }
