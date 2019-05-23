@@ -77,7 +77,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="dataContainerView" destination="iqi-CB-vTl" id="PKk-eE-WQ9"/>
                                             <outlet property="name" destination="Ujq-gY-B06" id="C9t-vh-g75"/>
                                             <outlet property="picture" destination="w62-kl-vQH" id="mzX-26-i8Y"/>
                                             <outlet property="price" destination="9bA-Ng-0T4" id="9yH-er-1IM"/>
